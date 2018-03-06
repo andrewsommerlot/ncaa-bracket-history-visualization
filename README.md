@@ -35,10 +35,16 @@ Alhtough not all probable, there are 64 possible unique paths to the National Ch
 | Bottom Right | 4 |
 | Bottom Left  | 2 |
 
-I was expecting region number to mean region 1 winner plays region 4 winner and region 2 winner plays region 3 winner in the final four, but this did not look right. Also, there are changes in regions over time, and I'm not sure what all else. This is important as the wrong region placement make a big deal in the final message conveyed by the chart. But, this is the best I have right now.  
+I was expecting region number to mean region 1 winner plays region 4 winner and region 2 winner plays region 3 winner in the final four, but this did not look right. Also, there are changes in regions over time, and I'm not sure what all else. This is important as the wrong region placement make a big deal in the final message conveyed by the chart. But, this is the best I have right now.
 
-## Drawing Victory Paths
+I plotted all the paths to see how the bracket was looking. Below, its just lines drawn from begining to end without any consideration for wins or losses. 
+
+<img src="./pics/bracket_test.png" width="800">
+
+## Drawing Victory Paths Dependent on Wins
 Next, I devised a drawing scheme for the victory paths. After a little thought, I went with a multiplicatively increase number of identical vicotry paths for each single unqiue victory path based on how many wins the team in the given region-seed won. For example, if the overall number 1 seed (top left, region 1, seed 1) won against the 16 seed there, then the vicotry path for the 1 seed would extend 2 points, first travling down the y axis, then over on the x axis to the next bracket-landing in the next round. The 16 seed line would extend just 1 point, meeting the 1 seed line half way between the two seed lines on y axis. Additionally, instead of drawing 1 line, mutiplicativley more lines where drawn over the entire vicotry path based on number of games won. So in the above example, 10 lines were drawn over the 1 seed's path and just 1 over the 16 seeds path. Small differences in the x and y coordinates were added or subtracted from the verticies, giving a little bit of randomness to the paths. This process would extend as the team won more games agianst more teams, each time drawing 10 times more lines than numbers of games they won. Later this will create the "heating up" effect of particular region seeds winning more than others. 
+
+The result from the 
 
 I used the following process to traslate the game results table into the victory paths that were plotted in the figure.
 
@@ -61,4 +67,20 @@ For All Years from 1985 to 2017:
 Convert x and y verticies to pandas dataframe
 
 ## Plotting the Paths
-All that remained 
+Since the above process created a pandas dataframe that was ready to plot multiple lines based on the datashader library, all that remained was to define the canvas, plot features, and importantly the color map and heat map visualization method. I chose the fire color map (becuase its looks fancy) and the eq hist option for the heat map becuase it shows differences the way I was thinking. I messed around with these parameters a bit, and some more tuning could be done, but, time to move on to another project. To get the figure below, I went back and made a few changes: 
+* Scaled the x and y points around to a more standard bracket shape
+* Added a power increase to victory paths that made the final four (mutiplier^2) and championship (multiplier^3)
+* Added hard cut-off to the jitter functions that create the heat map line effect to sharpen the edges.
+* Set a minimum of 2 lines in the first round for teams that lost
+
+**Here's the final result:**
+
+<img src="./pics/1985-2017_final_4_and_champ_extra_lines.png.png width="800">
+
+
+## Closing Thoughts
+There are a bunch of other things you could do with this plot and setup. As and Example, I turned off the line multiplier and drew only "true" paths, paths teams actually traced through all turnaments from 1985 to 2017. This way, I'm not forcing the map to show anything, but just looking at the data. Some of the same features can seen, but the winners and final fours are less obvious than in the first. I might tighten up this code, make it more modular if I find out the regions are definately correct, and make it easier to plot different analysis on the bracket. 
+
+**Only true paths, no multiples**
+
+<img src="./pics/1985-2017_true_paths.png width="800">
