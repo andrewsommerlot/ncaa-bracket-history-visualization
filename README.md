@@ -46,7 +46,7 @@ Next, I devised a drawing scheme for the victory paths. After a little thought, 
 
 Here result from the 1985 turnament, which incidently is a rather unqiue year, where Villanova won as the bottom left 8 seed playing against Georgetown, the 1 seed from the top right. 
 
-<img src="./pics/1985.png width="800">
+<img src="./pics/1985.png" width="800">
 
 I was not perfectly satisfied with the way this turned out, but forged forward anyway. 
 
