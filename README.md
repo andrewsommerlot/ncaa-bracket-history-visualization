@@ -79,7 +79,7 @@ Since the above process created a pandas dataframe that was ready to plot multip
 
 **Here's the final result:**
 
-<img src="./pics/1985-2017_final_4_and_champ_extra_lines.png width="800">
+<img src="./pics/1985-2017_final_4_and_champ_extra_lines.png" width="800">
 
 
 ## Closing Thoughts
@@ -91,4 +91,4 @@ This true line bracket is capable of making unique assigments of region seed mat
 
 **Only true paths, no multiples**
 
-<img src="./pics/1985-2017_true_paths.png width="800">
+<img src="./pics/1985-2017_true_paths.png" width="800">
