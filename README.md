@@ -91,4 +91,4 @@ This true line bracket is capable of making unique assigments of region seed mat
 
 **Only true paths, no multiples**
 
-<img src="./pics/1985-2017_true_paths.png" width="800">
+<img src="./pics/1985-2017_true_paths_hist.png" width="800">
