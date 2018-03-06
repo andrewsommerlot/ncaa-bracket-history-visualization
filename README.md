@@ -89,6 +89,6 @@ There are a bunch of other things you could do with this plot and setup. As and 
 
 This true line bracket is capable of making unique assigments of region seed matchup winners based on greater number of lines, and could fill out a bracket. I'll try to do this and see how the "past dictates the future" assumption goes, we can think of it as a bench mark maybe.
 
-**Only true paths, no multiples**
+**Only true paths, no multiples:**
 
 <img src="./pics/1985-2017_true_paths_hist.png" width="800">
