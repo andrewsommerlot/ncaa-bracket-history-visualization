@@ -39,3 +39,26 @@ I was expecting region number to mean region 1 winner plays region 4 winner and 
 
 ## Drawing Victory Paths
 Next, I devised a drawing scheme for the victory paths. After a little thought, I went with a multiplicatively increase number of identical vicotry paths for each single unqiue victory path based on how many wins the team in the given region-seed won. For example, if the overall number 1 seed (top left, region 1, seed 1) won against the 16 seed there, then the vicotry path for the 1 seed would extend 2 points, first travling down the y axis, then over on the x axis to the next bracket-landing in the next round. The 16 seed line would extend just 1 point, meeting the 1 seed line half way between the two seed lines on y axis. Additionally, instead of drawing 1 line, mutiplicativley more lines where drawn over the entire vicotry path based on number of games won. So in the above example, 10 lines were drawn over the 1 seed's path and just 1 over the 16 seeds path. Small differences in the x and y coordinates were added or subtracted from the verticies, giving a little bit of randomness to the paths. This process would extend as the team won more games agianst more teams, each time drawing 10 times more lines than numbers of games they won. Later this will create the "heating up" effect of particular region seeds winning more than others. 
+
+I used the following process to traslate the game results table into the victory paths that were plotted in the figure.
+
+For All Years from 1985 to 2017:
+* Subset the Turnament results by Year 
+* Build a lookup table relating that year's teams to their unique region seed postion
+* For All Teams in the 64 present for that turnament:
+  * Find the maximum value of round reached for each team
+  * If max round is 6 then:
+    * Check if team 1 score > team 2 socre 
+    * Assign a round value of 7 to winning team from round 6
+  * Cacluate wins as round - 1
+* Join number of wins column to lookup table
+* Based on region seed, locate victory path x and y verticies matrix
+* Based on number of wins, subset the x and y verticies marix
+* Make copies of the selected x and y verticies with jitter defined by addition of a value from a standard t distribution
+* Save all x and y verties to list 
+* Exit loop 
+
+Convert x and y verticies to pandas dataframe
+
+## Plotting the Paths
+All that remained 
