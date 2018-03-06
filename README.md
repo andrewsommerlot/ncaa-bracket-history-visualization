@@ -44,9 +44,13 @@ I plotted all the paths to see how the bracket was looking. Below, its just line
 ## Drawing Victory Paths Dependent on Wins
 Next, I devised a drawing scheme for the victory paths. After a little thought, I went with a multiplicatively increase number of identical vicotry paths for each single unqiue victory path based on how many wins the team in the given region-seed won. For example, if the overall number 1 seed (top left, region 1, seed 1) won against the 16 seed there, then the vicotry path for the 1 seed would extend 2 points, first travling down the y axis, then over on the x axis to the next bracket-landing in the next round. The 16 seed line would extend just 1 point, meeting the 1 seed line half way between the two seed lines on y axis. Additionally, instead of drawing 1 line, mutiplicativley more lines where drawn over the entire vicotry path based on number of games won. So in the above example, 10 lines were drawn over the 1 seed's path and just 1 over the 16 seeds path. Small differences in the x and y coordinates were added or subtracted from the verticies, giving a little bit of randomness to the paths. This process would extend as the team won more games agianst more teams, each time drawing 10 times more lines than numbers of games they won. Later this will create the "heating up" effect of particular region seeds winning more than others. 
 
-The result from the 
+Here result from the 1985 turnament, which incidently is a rather unqiue year, where Villanova won as the bottom left 8 seed playing against Georgetown, the 1 seed from the top right. 
 
-I used the following process to traslate the game results table into the victory paths that were plotted in the figure.
+<img src="./pics/1985.png width="800">
+
+I was not perfectly satisfied with the way this turned out, but forged forward anyway. 
+
+The process used to make the figure above was looped over all turnaments to traslate the game results table into the victory paths to be plotted in the figure.
 
 For All Years from 1985 to 2017:
 * Subset the Turnament results by Year 
@@ -75,11 +79,15 @@ Since the above process created a pandas dataframe that was ready to plot multip
 
 **Here's the final result:**
 
-<img src="./pics/1985-2017_final_4_and_champ_extra_lines.png.png width="800">
+<img src="./pics/1985-2017_final_4_and_champ_extra_lines.png width="800">
 
 
 ## Closing Thoughts
+This "burning bracket" shows how important it is to be a 1 or 2 seed if you really want to win the whole thing. There also are a few interesting features that pop out, including that over 30 turnaments all National Champs from the top right quadrant have been a 1 seed. A wider variety of seeds have won from the bottom quadrants than the top, and a wider variety of seeds have won in the bottom right quadrant than any other. How to use this data? Well, for example, if you choose to think of past turnaments as translating to probabilies of future results, than you probably want your team in the bottom half if you are not getting a one seed. Or, if you are having difficulty deciding which team to pick in a tough matchup, you could pick the "hotter" winner from this bracket.
+
 There are a bunch of other things you could do with this plot and setup. As and Example, I turned off the line multiplier and drew only "true" paths, paths teams actually traced through all turnaments from 1985 to 2017. This way, I'm not forcing the map to show anything, but just looking at the data. Some of the same features can seen, but the winners and final fours are less obvious than in the first. I might tighten up this code, make it more modular if I find out the regions are definately correct, and make it easier to plot different analysis on the bracket. 
+
+This true line bracket is capable of making unique assigments of region seed matchup winners based on greater number of lines, and could fill out a bracket. I'll try to do this and see how the "past dictates the future" assumption goes, we can think of it as a bench mark maybe.
 
 **Only true paths, no multiples**
 
