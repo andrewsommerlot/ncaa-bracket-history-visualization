@@ -1,15 +1,16 @@
 # NCAA Bracket History Visualization
-Its March, and the Madness is right around the corner again! As a lifelong fan of basketball, I thought I try to study the bracket and turnament history a little deeper this year and apply some data visualization techniques to see what I could learn. 
-I set out with this  goal:
-**to create a bracket-based visualization of all turnament games which communicates how each region-seed position has performed over time.**
-
-This repo contains an ipython notebook which describes creating a visual representation of all ncaa mens basketball turnament results with pandas, numpy, bokeh, and datashader. The visualiztion was designed for high-level study focused on turnament results based on seed and region position.
 
 [bracket]: ./pics/1985-2017_final_4_and_champ_extra_lines.png "Bracket Visualization"
 
 
 ![Bracket Viz][bracket]
 
+
+Its March, and the Madness is right around the corner again! As a lifelong fan of basketball, I thought I try to study the bracket and turnament history a little deeper this year and apply some data visualization techniques to see what I could learn. 
+I set out with this  goal:
+**to create a bracket-based visualization of all turnament games which communicates how each region-seed position has performed over time.**
+
+This repo contains an ipython notebook which describes creating a visual representation of all ncaa mens basketball turnament results with pandas, numpy, bokeh, and datashader. The visualiztion was designed for high-level study focused on turnament results based on seed and region position.
 
 ## The Data
 To start, I needed data. I got this from data world, uploaded by Michael Roy [https://data.world/michaelaroy/ncaa-tournament-results]. This was a great find, as I expected to have to put this in a similar format myself. Big thanks to Micheal Roy. I edited only a few of the column names to make them all unique. 
