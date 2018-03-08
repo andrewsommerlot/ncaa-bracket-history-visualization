@@ -1,9 +1,7 @@
 # NCAA Bracket History Visualization
 
-[bracket]: ./pics/1985-2017_final_4_and_champ_extra_lines.png "Bracket Visualization"
-
-
-![Bracket Viz][bracket]
+**All Victory paths of teams by seed position from 1885 through 2017. Brighter, hotter lines are where teams win more, lighter, cooler lines are where team win less.**
+<img src="./pics/1985-2017_true_paths_hist.png" width="800">
 
 
 Its March, and the Madness is right around the corner again! As a lifelong fan of basketball, I thought I try to study the bracket and turnament history a little deeper this year and apply some data visualization techniques to see what I could learn. 
@@ -80,7 +78,7 @@ Since the above process created a pandas dataframe that was ready to plot multip
 * Added hard cut-off to the jitter functions that create the heat map line effect to sharpen the edges.
 * Set a minimum of 2 lines in the first round for teams that lost
 
-**Here's the final result:**
+**Here's the result with multiple lines:**
 
 <img src="./pics/1985-2017_final_4_and_champ_extra_lines.png" width="800">
 
