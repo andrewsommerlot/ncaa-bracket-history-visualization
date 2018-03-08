@@ -1,7 +1,4 @@
 # NCAA Bracket History Visualization
-Visual representation of all ncaa mens basketball turnament results. Designed for high-level visualization focused on seed and region position. Built using pandas, bokeh, and datashader. 
-
-The result of this work is a ncaa mens basketball bracket built with data from all turnament resutls since 1985, excluding play-in games. The goal of this analysis was to create a bracket-based visualization of all turnament games which communicates how each region-seed position has performed over time. 
 
 [bracket]: ./pics/1985-2017_final_4_and_champ_extra_lines.png "Bracket Visualization"
 
@@ -9,7 +6,13 @@ The result of this work is a ncaa mens basketball bracket built with data from a
 ![Bracket Viz][bracket]
 
 
-## Getting The Data
+Its March, and the Madness is right around the corner again! As a lifelong fan of basketball, I thought I try to study the bracket and turnament history a little deeper this year and apply some data visualization techniques to see what I could learn. 
+I set out with this  goal:
+**to create a bracket-based visualization of all turnament games which communicates how each region-seed position has performed over time.**
+
+This repo contains an ipython notebook which describes creating a visual representation of all ncaa mens basketball turnament results with pandas, numpy, bokeh, and datashader. The visualiztion was designed for high-level study focused on turnament results based on seed and region position.
+
+## The Data
 To start, I needed data. I got this from data world, uploaded by Michael Roy [https://data.world/michaelaroy/ncaa-tournament-results]. This was a great find, as I expected to have to put this in a similar format myself. Big thanks to Micheal Roy. I edited only a few of the column names to make them all unique. 
 
 ## Building the Bracket Verticies 
@@ -89,6 +92,6 @@ There are a bunch of other things you could do with this plot and setup. As and 
 
 This true line bracket is capable of making unique assigments of region seed matchup winners based on greater number of lines, and could fill out a bracket. I'll try to do this and see how the "past dictates the future" assumption goes, we can think of it as a bench mark maybe.
 
-**Only true paths, no multiples**
+**Only true paths, no multiples:**
 
 <img src="./pics/1985-2017_true_paths_hist.png" width="800">
